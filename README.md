@@ -9,4 +9,4 @@ Construir la imagen con el comando:
 
 Lanzar el contenedor con el comando: 
 
-<code> docker run -p 5002:5002 -d <nombre_de_la_imagen>:< version > </code>
+<code> docker run -p 5002:5002 -d <nombre_de_la_imagen>:<version> </code>
