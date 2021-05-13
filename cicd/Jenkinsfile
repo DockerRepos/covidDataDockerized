@@ -1,0 +1,18 @@
+pipeline{
+    agent any
+    stages('Creación contenedor') {
+        stage('Descargar fuentes'){
+            steps{
+                dir('src'){
+                    git branch: 'cambio_api_datos', url: 'https://github.com/MyPythonRepos/covidDataAnalysis.git'
+                }
+            }
+        }
+        stage('Obtener Dockerfile'){
+            steps{
+                git poll: false, branch: 'main', credentialsId: 'git_credentials', url: 'https://github.com/JenkinsRepos/covidDataDockerized.git'    
+            }
+        }
+    }
+}
+
